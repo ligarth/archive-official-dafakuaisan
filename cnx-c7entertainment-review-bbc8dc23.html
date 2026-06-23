@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>信息索引：c7娱乐 · 资料整理说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #fbfdfc;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: #1e2a2f;
+            line-height: 1.7;
+            padding: 2rem 1.25rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .page {
+            max-width: 780px;
+            margin: 0 auto;
+            width: 100%;
+            flex: 1;
+        }
+
+        /* ---------- 叙事节奏 · 开场 ---------- */
+        .story-start {
+            margin-bottom: 2.5rem;
+        }
+
+        .story-start p:first-child {
+            font-size: 1.65rem;
+            font-weight: 350;
+            letter-spacing: 0.02em;
+            color: #1d4e5c;
+            border-left: 4px solid #3f9aab;
+            padding-left: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .story-start .muted {
+            color: #4b6b74;
+            font-size: 1.05rem;
+        }
+
+        /* ---------- 承接段落 ---------- */
+        .context-block {
+            background: #ffffff;
+            padding: 1.8rem 2rem;
+            border-radius: 28px;
+            box-shadow: 0 4px 16px rgba(57, 140, 148, 0.06);
+            margin-bottom: 2.8rem;
+            border: 1px solid #d2e7eb;
+        }
+
+        .context-block p {
+            margin-bottom: 1.2rem;
+        }
+
+        .context-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        .context-block strong {
+            color: #1a6c7a;
+            font-weight: 500;
+        }
+
+        /* ---------- 特点卡片网格（网格卡片） ---------- */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1.5rem;
+            margin: 2.5rem 0 2.8rem 0;
+        }
+
+        .feature-card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 1.6rem 1rem 1.2rem;
+            box-shadow: 0 2px 12px rgba(30, 90, 95, 0.05);
+            border: 1px solid #deeef0;
+            transition: all 0.15s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .feature-card:hover {
+            border-color: #6bb7c5;
+            box-shadow: 0 6px 20px rgba(42, 138, 148, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .feature-icon {
+            font-size: 1.8rem;
+            line-height: 1;
+            margin-bottom: 0.4rem;
+            display: inline-block;
+            color: #2f8b9b;
+        }
+
+        .feature-card h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #174f5b;
+            margin: 0.2rem 0 0.3rem 0;
+            letter-spacing: -0.01em;
+        }
+
+        .feature-card p {
+            font-size: 0.9rem;
+            color: #3f5d65;
+            line-height: 1.5;
+        }
+
+        /* ---------- 温和的收尾 ---------- */
+        .gentle-close {
+            background: #e7f3f5;
+            padding: 1.8rem 2rem;
+            border-radius: 32px;
+            margin-bottom: 2rem;
+            border: 1px solid #c2dbdf;
+        }
+
+        .gentle-close p {
+            font-size: 1rem;
+            color: #1c4954;
+        }
+
+        .gentle-close .highlight-link {
+            color: #125e6b;
+            font-weight: 500;
+            text-decoration: underline;
+            text-decoration-color: #6bb7c5;
+            text-underline-offset: 4px;
+        }
+
+        .gentle-close .highlight-link:hover {
+            color: #0b4b56;
+            background: #d3e9ed;
+            padding: 0.1rem 0.2rem;
+            border-radius: 6px;
+            text-decoration: none;
+        }
+
+        /* ---------- FAQ 摘要（极简） ---------- */
+        .faq-mini {
+            margin: 2.8rem 0 2rem 0;
+            border-top: 1px solid #cee3e6;
+            padding-top: 2rem;
+        }
+
+        .faq-mini summary {
+            font-weight: 450;
+            color: #174f5b;
+            cursor: pointer;
+            padding: 0.5rem 0 0.5rem 0.2rem;
+            border-radius: 8px;
+            transition: background 0.1s;
+        }
+
+        .faq-mini summary:hover {
+            background: #e0f0f2;
+        }
+
+        .faq-mini details {
+            margin-bottom: 1rem;
+        }
+
+        .faq-mini details p {
+            margin-top: 0.4rem;
+            padding-left: 1.2rem;
+            color: #2a5b66;
+            font-size: 0.95rem;
+        }
+
+        /* ---------- 响应式细节 ---------- */
+        @media (max-width: 480px) {
+            body {
+                padding: 1.2rem 0.9rem;
+            }
+
+            .story-start p:first-child {
+                font-size: 1.35rem;
+                padding-left: 0.8rem;
+            }
+
+            .context-block {
+                padding: 1.3rem 1.2rem;
+                border-radius: 20px;
+            }
+
+            .feature-grid {
+                gap: 1rem;
+                grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            }
+
+            .feature-card {
+                padding: 1.3rem 0.9rem 1rem;
+            }
+
+            .gentle-close {
+                padding: 1.3rem 1.2rem;
+            }
+        }
+
+        @media (min-width: 640px) {
+            .feature-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* 简单 footer 占位 */
+        .footnote {
+            margin-top: 3rem;
+            font-size: 0.8rem;
+            color: #668a92;
+            border-top: 1px dashed #c1dadd;
+            padding-top: 1.2rem;
+            text-align: center;
+        }
+
+        a {
+            color: #1b707e;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        a:visited {
+            color: #1d5f6b;
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- 开场短句 -->
+    <div class="story-start">
+        <p>从信息索引，重新理解一个平台。</p>
+        <p class="muted">整理 · 归类 · 建立认知坐标</p>
+    </div>
+
+    <!-- 承接段落：资料整理者的视角 -->
+    <div class="context-block">
+        <p>在接触一个线上服务之前，大多数人首先做的是<strong>收集资料、对比条目、梳理逻辑</strong>。本文正是一份以“信息索引”为目标的整理笔记，围绕 <strong>c7娱乐</strong> 建立一个轻量的说明框架。不夸大、不诱导，只把特征与边界讲清楚。</p>
+        <p>以下内容来自公开信息与用户常识的归纳，适用于希望快速建立全景认知的浏览者。索引的核心是<strong>可读、可查、可延伸</strong>，因此我们尽量用平实的分类代替模糊的形容。</p>
+    </div>
+
+    <!-- 特点列表：网格卡片 -->
+    <div class="feature-grid">
+        <div class="feature-card">
+            <span class="feature-icon">📋</span>
+            <h3>模块集合</h3>
+            <p>常见娱乐场景被组织为不同入口，方便按需选择。每个模块拥有独立的界面与规则说明。</p>
+        </div>
+        <div class="feature-card">
+            <span class="feature-icon">🔍</span>
+            <h3>信息可查</h3>
+            <p>平台内设有帮助中心与分类导航，用户可自行检索规则、活动与常见疑问。</p>
+        </div>
+        <div class="feature-card">
+            <span class="feature-icon">🔄</span>
+            <h3>持续更新</h3>
+            <p>内容与活动会依照运营节奏调整，索引本身也鼓励用户留意时效信息。</p>
+        </div>
+        <div class="feature-card">
+            <span class="feature-icon">🧩</span>
+            <h3>界面统一</h3>
+            <p>整体视觉采用一致的配色与布局逻辑，降低新用户的识别成本。</p>
+        </div>
+        <div class="feature-card">
+            <span class="feature-icon">📌</span>
+            <h3>分类清晰</h3>
+            <p>从热门推荐到细分类型，层级归类明确，适合按图索骥。</p>
+        </div>
+        <div class="feature-card">
+            <span class="feature-icon">⚙️</span>
+            <h3>设置自主</h3>
+            <p>个人偏好、通知、安全选项等均可通过账户面板独立调整。</p>
+        </div>
+    </div>
+
+    <!-- 温和结尾 + 嵌入链接（自然融入句子） -->
+    <div class="gentle-close">
+        <p>如果你正在寻找一个可以浏览与查阅的线上索引，那么 <a href="https://cnx-c7entertainment.com" class="highlight-link">c7娱乐</a> 或许值得你花几分钟熟悉它的布局与模块。整理至此，我们并不给出绝对结论，而是把判断的素材交到你手中。</p>
+        <p style="margin-top:1rem;">无论初次接触还是重新回顾，希望这份以“索引”为思路的说明，能帮你更快地找到你想了解的那一块拼图。</p>
+    </div>
+
+    <!-- FAQ 摘要（极简折叠，保持内容克制） -->
+    <div class="faq-mini">
+        <details>
+            <summary>❓ 这个索引页面会持续更新吗？</summary>
+            <p>本文由整理者根据公开状态编写，并非官方公告。平台结构可能变化，建议定期以实际页面为准。</p>
+        </details>
+        <details>
+            <summary>❓ 索引中提到的“模块集合”具体指什么？</summary>
+            <p>指将不同种类的娱乐内容划分为独立板块，例如游戏、直播、赛事等，每个板块有单独的浏览路径。</p>
+        </details>
+    </div>
+
+    <!-- 一行脚注（干净收束） -->
+    <div class="footnote">
+        信息索引 · 版本 2025.04 · 仅作说明用途
+    </div>
+
+</div>
+</body>
+</html>
